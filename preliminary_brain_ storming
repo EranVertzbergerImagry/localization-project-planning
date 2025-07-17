@@ -1,0 +1,13 @@
+we will work in markdown file called project-planning.md. 
+the project is focused in development of a localization algorithm for and autonomous vehicle. we have a starting point and the project should bring us from this point to our objectives. currently our status is:
+1. we have a developed localization module based on IMU and odometry measurements. the module calculates the orientation using an AHRS module which fuses gyroscopes and accelerometers. The AHRS heading is fused with speed and steering measurements using kinematic model equations. The module is nested in the vehicle control module. it works as expected but drifts beacause of the gyro bias. 
+2. we have a separated visual odometry module based on stella vslam. it works offline and calculates the pose. There is a scale problem that is caused probably because there's no loop closure in our scenario. it is deployed in our CPP project but there seem to be a problem when running online the pose seems to be incorrect. when operating correctly (offline) the direction of driving seems correct but not tested.
+3. as ground truth measurements we want to use RTK measurments. we have an RTK system installed. the system is not properly configured. we need to verify installation that is compient with the configured coordinate system convention (ENU<->NED) and measure lever arm. we need to verify correct saving of data with OS clock and GPS clock. we need to gather enough data for analysis. 
+4.search for online public datasets for vehicles incorporating IMU, cameras, car speed and ground truth.
+5.we have implemented a calculation of the localization performance including: taking a long experiment segmenting to varying window sizes, aligning GT and estimated pose samples to a common coordinate system and calculating the euclidean error at the end of the window. then perform statistics to show correlations between localization error and time, distance, angle of turn. we didnt implement a metric calculation for direction of driving. 
+
+the objectives are: 
+a. a comprehentive amount of data with verified GT and algo to asses performance. 
+b. IMU & odometry based localization in a  new repository with an API to the central algorithm (called AI-driver which includs api to visual odometry module). The control should get the localization from AI- driver via API. 
+b. the IMU & odometry based localization drift should be dropped substantially until submeter accuracy up to 1 minute.
+c. solve scale problem in the VO algorithm 
