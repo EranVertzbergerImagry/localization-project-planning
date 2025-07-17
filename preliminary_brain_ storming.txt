@@ -8,6 +8,6 @@ the project is focused in development of a localization algorithm for and autono
 
 the objectives are: 
 a. a comprehentive amount of data with verified GT and algo to asses performance. 
-b. IMU & odometry based localization in a  new repository with an API to the central algorithm (called AI-driver which includs api to visual odometry module). The control should get the localization from AI- driver via API. 
-b. the IMU & odometry based localization drift should be dropped substantially until submeter accuracy up to 1 minute.
-c. solve scale problem in the VO algorithm 
+b. IMU & odometry based localization in a new repository with an API to the central algorithm (called AI-driver which includs api to visual odometry module). The control should get the localization from AI- driver via API. 
+c. the IMU & odometry based localization drift should be dropped substantially until submeter accuracy up to 1 minute.
+d. solve scale problem in the VO algorithm. 
