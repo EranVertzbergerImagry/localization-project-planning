@@ -86,9 +86,29 @@ The project will involve extracting the existing localization module from the ve
 - Localization module currently nested in vehicle control module
 - Not isolated as a standalone component with clean API
 - Need to establish connections with AI-driver and visual odometry module
+- Sensor API already implemented in common control & localization repository
 
 #### Task Breakdown
-[Tasks to be detailed]
+
+##### Repository Setup and Code Migration
+- **Task B1:** Merge localization metrics pull request to main branch (1 day)
+- **Task B2:** Create new repository structure for standalone localization module (1 day)
+- **Task B3:** Extract and migrate localization code from Vehicle Control repository (3 days)
+- **Task B4:** Set up build system and dependency management (2 days)
+
+##### Python Bindings and API Enhancement
+- **Task B5:** Create or verify Python bindings (pybind) for localization algorithm (3 days)
+- **Task B6:** Ensure compatibility with existing sensor API (2 days)
+
+##### Testing Framework
+- **Task B7:** Create Python test script for loading AI-driver trip data (2 days)
+- **Task B8:** Implement synchronous sensor data processing using timestamps (3 days)
+
+##### Documentation
+- **Task B9:** Document API usage and examples (2 days)
+
+##### Code Cleanup
+- **Task B10:** Remove control-related unused functionality (2 days)
 
 ### Tasks for Objective C: Enhanced IMU & Odometry Localization
 
@@ -132,4 +152,31 @@ The project will involve extracting the existing localization module from the ve
 - Deployed in CPP project
 
 #### Task Breakdown
-[Tasks to be detailed]
+
+##### Debugging and Initial Assessment
+- **Task D1:** Debug incompatibility of results when running VO in AI-driver versus script (3 days)
+- **Task D2:** Implement driving direction metric for comparison (2 days)
+- **Task D3:** Implement scale metric for comparing VO versus inertial localization drift (2 days)
+- **Task D4:** Analyze current VO performance against metrics (2 days)
+
+##### Speed Integration for Bundle Adjustment
+- **Task D5:** Design speed measurement integration architecture (2 days)
+- **Task D6:** Implement speed measurement feeding to bundle adjustment (3 days)
+- **Task D7:** Add speed measurement errors to cost function (2 days)
+- **Task D8:** Create configuration script for speed integration (1 day)
+
+##### IMU Integration for Bundle Adjustment
+- **Task D9:** Research IMU preintegration techniques (3 days)
+- **Task D10:** Implement IMU measurement feeding to bundle adjustment (3 days)
+- **Task D11:** Add IMU measurement errors to cost function (2 days)
+- **Task D12:** Create configuration script for IMU integration (1 day)
+
+##### Testing and Validation
+- **Task D13:** Run enhanced VO on test trips (2 days)
+- **Task D14:** Analyze scale improvement relative to original version (2 days)
+- **Task D15:** Fine-tune parameters for optimal performance (2 days)
+
+##### Integration
+- **Task D16:** Create necessary configurations for production deployment (1 day)
+- **Task D17:** Create pull request to AI-driver repository (1 day)
+- **Task D18:** Document scale correction implementation and results (2 days)
